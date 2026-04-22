@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Signup</h2>
+
+    <form id="signupForm">
+
+        <div class="input-group">
+            <input type="text" id="email" placeholder=" ">
+            <label>Email</label>
+            <div class="error" id="emailError"></div>
+        </div>
+
+        <div class="input-group">
+            <input type="password" id="password" placeholder=" ">
+            <label>Password</label>
+            <div class="error" id="passwordError"></div>
+        </div>
+
+        <div class="input-group">
+            <input type="password" id="confirmPassword" placeholder=" ">
+            <label>Confirm Password</label>
+            <div class="error" id="confirmError"></div>
+        </div>
+
+        <button type="submit">Signup</button>
+        <div class="success-msg" id="successMsg"></div>
+    </form>
+
+    <div class="link">
+        <a href="login3.html">Already have an account?</a>
+    </div>
+</div>
+
+<script>
+document.getElementById("signupForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
+    let confirm = document.getElementById("confirmPassword");
+
+    let emailError = document.getElementById("emailError");
+    let passwordError = document.getElementById("passwordError");
+    let confirmError = document.getElementById("confirmError");
+    let successMsg = document.getElementById("successMsg");
+
+    emailError.innerText = "";
+    passwordError.innerText = "";
+    confirmError.innerText = "";
+    successMsg.innerText = "";
+
+    let valid = true;
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email.value)) {
+        emailError.innerText = "Invalid email";
+        email.classList.add("error-border");
+        valid = false;
+    } else {
+        email.classList.add("success");
+    }
+
+    if (password.value.length < 6) {
+        passwordError.innerText = "Min 6 characters required";
+        password.classList.add("error-border");
+        valid = false;
+    }
+
+    if (password.value !== confirm.value) {
+        confirmError.innerText = "Passwords do not match";
+        confirm.classList.add("error-border");
+        valid = false;
+    }
+
+    if (valid) {
+        let user = {
+            email: email.value,
+            password: password.value
+        };
+
+        localStorage.setItem("user", JSON.stringify(user));
+
+        successMsg.innerText = "✅ Registration Successful!";
+    }
+});
+</script>
+
+</body>
+</html>

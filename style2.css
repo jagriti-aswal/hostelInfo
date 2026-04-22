@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 350px;
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    color: white;
+}
+
+input.success {
+    border-bottom: 2px solid #2ecc71;
+}
+
+input.error-border {
+    border-bottom: 2px solid #e74c3c;
+}
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 12px;
+    color: #00f2fe;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #00f2fe;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.error {
+    font-size: 12px;
+    color: #ff6b6b;
+}
+
+.success-msg {
+    color: #2ecc71;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.link {
+    text-align: center;
+    margin-top: 10px;
+}
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px){
+
+    body{
+        padding:15px;
+    }
+
+    /* container */
+    .container{
+        width:100%;
+        padding:20px;
+    }
+
+    /* heading */
+    h2{
+        text-align:center;
+        font-size:24px;
+    }
+
+    /* form */
+    form{
+        width:100%;
+    }
+
+    /* input group */
+    .input-group{
+        width:100%;
+        margin-bottom:15px;
+    }
+
+    input{
+        width:100%;
+        padding:10px;
+        font-size:14px;
+    }
+
+    /* labels */
+    .input-group label{
+        font-size:13px;
+    }
+
+    /* error text */
+    .error{
+        font-size:12px;
+    }
+
+    /* success message */
+    .success-msg{
+        font-size:13px;
+        text-align:center;
+    }
+
+    /* button */
+    button{
+        width:100%;
+        padding:12px;
+        font-size:15px;
+    }
+
+    /* link */
+    .link{
+        text-align:center;
+        margin-top:15px;
+    }
+
+    .link a{
+        font-size:14px;
+    }
+}

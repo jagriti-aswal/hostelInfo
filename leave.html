@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     body{
+    background-image: radial-gradient(white,rgb(38, 84, 164));
+}
+
+/* container */
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FORM */
+form{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 18px;
+    width: 420px;
+    background: url(data:image/webp;base64,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);
+    background-size: cover;
+}
+
+/* inputs */
+input, textarea, select{
+    width:100%;
+    margin:4px 0;
+    padding:6px;
+}
+
+/* labels */
+label{
+    font-size:14px;
+}
+
+/* 🔽 reduce space between radio/checkbox */
+.reason label{
+    margin:2px 0;
+}
+
+.reason input{
+    margin-right:4px;
+}
+
+/* button */
+button{
+    margin-top:8px;
+    padding:6px;
+}
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px){
+
+    body{
+        padding: 10px;
+    }
+
+    /* container */
+    .container{
+        width:100%;
+    }
+
+    /* FORM */
+    form{
+        width:100%;          /* full width on phone */
+        padding:15px;
+    }
+
+    /* inputs */
+    input, textarea, select{
+        padding:8px;
+        font-size:14px;
+    }
+
+    /* heading */
+    h1{
+        font-size:22px;
+        text-align:center;
+    }
+
+    /* fieldset spacing */
+    fieldset{
+        padding:8px;
+    }
+
+    /* labels */
+    label{
+        font-size:13px;
+    }
+
+    /* radio buttons (stack nicely) */
+    .reason{
+        display:flex;
+        flex-direction:column;   /* 👈 important */
+        gap:3px;
+    }
+
+    /* button */
+    button{
+        width:100%;
+        padding:10px;
+        font-size:15px;
+    }
+
+    /* select box */
+    select{
+        width:100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form action="/portfolio.html" autocomplete="on" novalidate target="_blank">
+                <h1>Leave Form</h1>
+                <fieldset>
+                    <legend>Student details</legend>
+                <label >Student Name</label>
+                <input type="text"><br>
+                <label>Roll Number</label>
+                <input type="roll number">
+                <br>
+                <label >Parents Contact Number</label>
+                <input type="tel" placeholder="+91-12345-67890" pattern="\+91-[0-9]{5}-[0-9]{5}">
+                <label>Email</label>
+                <input type="email" >
+                </fieldset>
+                
+                <label>Reason for leave</label><br>
+                <textarea placeholder="enter your reaon here"></textarea><br><br>
+                <label>Location</label><br>
+                <label>
+                    <input type="checkbox" name="Delhi">Delhi</label>
+                    <br>
+                <label><input type="checkbox" name="chandigarh">chandigarh</label><br>
+                <label><input type="checkbox" name="home">home</label>
+                <br><br>
+                <label>Reason for going home</label><br>
+                <div class="reason">
+                <label><input type="radio" name="reason">Medical</label>
+                <label><input type="radio" name="reason">Urgent</label>
+                <label><input type="radio" name="reason">Marriage</label>
+                <label><input type="radio" name="reason" onclick="ShowElem()">Other</label>
+                <textarea id="other" placeholder="please specify here" style="display: none;"></textarea>
+                </div>
+                <br>
+                <label>Enter a date after 4 FEB 2026</label>
+                <input type="date" min="2026-02-04">
+                <label>To</label>
+                <input type="date" max="2026-04-28">
+                <br>
+                <label>Enter number of days</label>
+                <input type="number" min="1" max="80" step="3" value="1">
+                <br>
+                <label>Select floor </label>
+               <select size="3" multiple>
+                <option value="first">first</option>
+                <option value="second">second</option>
+                <option value="third">third</option>
+                <option value="third">third</option>
+                <option value="third">third</option>
+                <option value="third">third</option>
+               </select>
+               <button onclick="alert('Successfully submitted')" method="get" target="">Submit</button>
+
+            </form>
+            </div>
+</body>
+</html>
